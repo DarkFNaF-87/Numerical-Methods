@@ -146,7 +146,7 @@ int main(){
 				
 			cout << endl << "Would you like to start again? (Y/N) " << endl;
 			cin >> again;
-			if (again == 'N' || again == 'n'){
+			if (again != 'Y' && again != 'y'){
 				return 0;
 			}
 			
@@ -155,4 +155,5 @@ int main(){
 			} while (keepf == 'Y' || keepf == 'y');
 			
 		} while(again == 'Y' || again == 'y');
+
 }
