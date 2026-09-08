@@ -14,6 +14,11 @@ void print_function(int degree , float array[]); //no need to acess globals //ne
 void get_coff(int degree, float array[]); //no need to access golbas // gets the coff of any function ascendingly by inputing the degree and the arr it will store to
 
 int main(){
+
+	cout << "*****************************************************************************\n";
+	cout << "THIS PROGRAM USES NEWTON RAPHSON METHOD TO CALCULATE THE ROOT OF A POLYNOMIAL\n";
+	cout << "*****************************************************************************\n";
+
 	char choice;
 	float x;
 	float x_o;
@@ -30,8 +35,8 @@ int main(){
 	cin >> f_degree;
 	get_coff(f_degree, f_coff);
 	
-	cout << endl << "Your function is: " << endl << endl << "f(x) = ";
-	print_function(f_degree, f_coff);
+	cout << endl << "Your function is: " << endl << "f(x) = ";
+	print_function(f_degree, f_coff); cout << endl;
 		
 	differentiate(f_degree, f_coff, f_dash_degree, f_dash_coff);
 	cout << endl << "f_dash(x) = ";
@@ -41,13 +46,13 @@ int main(){
 	cin >> x_o;
 	
 	//User chooses wether they want iterations or error
-	cout << endl << endl << "for iteration enter 'I'" << endl << "for error enter 'E'" << endl;
+	cout << endl << "for iteration enter 'I'" << endl << "for error enter 'E'" << endl;
 	cin >> choice;
 	
 	if(choice == 'I' || choice == 'i'){
 		cout << "Enter how many iterations would you like to do: ";
 		cin >> I;
-		cout << endl << endl;
+		cout << endl;
 		
 		for(int i = 1; i <= I; i++){
 			x = x_o - ( get_output(f_degree, f_coff, x_o) / get_output(f_dash_degree, f_dash_coff, x_o) );
@@ -58,6 +63,7 @@ int main(){
 			cout << "x_"<< i <<" = " << x << endl;
 			
 			x_o = x;
+			cout << endl;
 		}
 	}
 	else if (choice == 'E' || choice == 'e'){
