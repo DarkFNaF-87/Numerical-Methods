@@ -10,6 +10,10 @@ float x_new(int degree, float x, float table [][4]);
 void print_table(int degree, float table[][4]);
 
 int main(){
+	cout << "**************************************************************\n";
+	cout << "THIS PROGRAM USES BIRGE VIETA TO FIND THE ROOT OF A POLYNOMIAL\n";
+	cout << "**************************************************************\n";
+
 	int degree;
 	int I;
 	float x_o = 0;
